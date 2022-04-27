@@ -19,7 +19,8 @@ export default new VueRouter ({
       component: HomeVue
     },
     {
-      path: '/ad',
+      path: '/ad/:id',
+      props: true,
       name: 'ad',
       component: AdVue
     },
