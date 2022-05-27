@@ -4,7 +4,7 @@ export default {
             {
                 title: 'First ad',
                 description: 'Hello i am description',
-                promo: false,
+                promo: true,
                 imageSrc: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
                 id: '123'
             },
@@ -22,8 +22,7 @@ export default {
                 imageSrc: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
                 id: '12345'
             },
-
-        ]
+        ],
     },
     mutations: {
         createAd(state, payload) {
@@ -33,7 +32,6 @@ export default {
     actions: {
         createAd ({commit}, payload) {
             payload.id = 'qweqwe'
-
             commit('createAd', payload)
         }
     },

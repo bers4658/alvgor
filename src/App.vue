@@ -25,10 +25,18 @@
     <v-app-bar app dark color="primary">
       <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" class="pointer">Ad aplication</router-link>
+        <router-link to="/" tag="span" class="pointer">Интернет магазин</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
+        <v-autocomplete
+      :search-input.sync="search"
+      class="mx-16 mt-2"
+      flat
+      hide-no-data
+      label="Поиск по товарам"
+      solo-inverted
+    ></v-autocomplete>
         <v-btn v-for="link in links" :key="link.title" :to="link.url" color="primary">
           <v-icon left>
             {{link.icon}}
@@ -54,7 +62,12 @@
         {title: 'Orders', icon: 'mdi-wallet-membership', url: '/orders'},
         {title: 'New ad', icon: 'mdi-plus-box-multiple', url: '/new'},
         {title: 'My ads', icon: 'mdi-playlist-plus', url: '/list'},
-      ]
+        {title: 'Каталог', icon: 'mdi-package-variant-closed', url: '/catalog'},
+        {title: 'Карзина', icon: 'mdi-cart', url: '/cart'},
+        {title: 'Избранное', icon: 'mdi-heart', url: '/favorites'},
+      ],
+        
+        search: null,
     }),
   }
 </script>

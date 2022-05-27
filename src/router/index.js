@@ -7,7 +7,10 @@ import NewAd from '@/components/Ads/NewAd'
 import LoginVue from '@/components/Auth/LoginVue'
 import RegistrationVue from '@/components/Auth/RegistrationVue'
 import OrdersVue from '@/components/User/OrdersVue'
-
+import CatalogVue from '@/components/CatalogVue'
+import CartVue from '@/components/CartVue'
+import FavoritesVue from '@/components/FVue'
+import ProductVue  from "../components/ProductVue"
 
 Vue.use(VueRouter)
 
@@ -48,6 +51,28 @@ export default new VueRouter ({
       path: '/orders',
       name: 'orders',
       component: OrdersVue
+    },
+    {
+      path: '/catalog',
+      name: 'catalog',
+      component: CatalogVue
+    },
+    {
+      path: '/cart/:id',
+      props: true,
+      name: 'cart',
+      component: CartVue
+    },
+    {
+      path: '/favorites',
+      name: 'favorites',
+      component: FavoritesVue
+    },
+    {
+      path: '/product/:id',
+      props: true,
+      name: 'product',
+      component: ProductVue
     },
   ],
   mode: 'history'
